@@ -32,6 +32,7 @@ py -m test.test03_func06
 py -m test.test04_func07
 py -m test.test05_func08
 py -m test.test06_func09
+py -m test.test07_func11
 ```
 
 The tests use Python's built-in `assert` statements.
