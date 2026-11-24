@@ -1,4 +1,4 @@
 [
-    {"id": 1, "category": "accessibility", "status": "open", "affected_count": 3},
+    {"id": 1, "category": "accessibility", "status": "open", "affected_count": null},
     {"id": 2, "category": "accessibility", "status": "open", "affected_count": 0}
 ]
