@@ -1,33 +1,3 @@
-reports = [
-    {
-        "id": 1,
-        "titel": "Bordstein nicht abgesenkt",
-        "category": "Barrierefreiheit",
-        "betroffene": 4,
-        "status": "open",
-    },
-    {
-        "id": 2,
-        "titel": "Beleuchtung ausgefallen",
-        "category": "Infrastruktur",
-        "betroffene": None,
-        "status": "open",
-    },
-    {
-        "id": 3,
-        "titel": "Aufzug außer Betrieb",
-        "category": "Barrierefreiheit",
-        "betroffene": 12,
-        "status": "closed",
-    },
-    {
-        "id": 4,
-        "titel": "Zugang zum Beratungsraum versperrt",
-        "category": "Barrierefreiheit",
-        "betroffene": None,
-        "status": "open",
-    },
-]
 
 
 # nur offene Meldungen der übergebenen category auswählen;
@@ -43,5 +13,37 @@ def filter_open_reports(reports, category):
             wanted_reports.append(report)
     return wanted_reports
 
+
+
 if __name__ == "__main__":
+    reports = [
+        {
+            "id": 1,
+            "titel": "Bordstein nicht abgesenkt",
+            "category": "Barrierefreiheit",
+            "betroffene": 4,
+            "status": "open",
+        },
+        {
+            "id": 2,
+            "titel": "Beleuchtung ausgefallen",
+            "category": "Infrastruktur",
+            "betroffene": None,
+            "status": "open",
+        },
+        {
+            "id": 3,
+            "titel": "Aufzug außer Betrieb",
+            "category": "Barrierefreiheit",
+            "betroffene": 12,
+            "status": "closed",
+        },
+        {
+            "id": 4,
+            "titel": "Zugang zum Beratungsraum versperrt",
+            "category": "Barrierefreiheit",
+            "betroffene": None,
+            "status": "open",
+        },
+    ]
     print(filter_open_reports(reports, "Barrierefreiheit"))

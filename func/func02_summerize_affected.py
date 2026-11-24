@@ -1,9 +1,3 @@
-reports = [
-    {"id": 1, "affected_count": 4},
-    {"id": 2, "affected_count": None},
-    {"id": 3, "affected_count": 0},
-    {"id": 4, "affected_count": 12},
-]
 
 # Rules:
 # "known_total": Summe der bekannten Betroffenenzahlen.
@@ -26,5 +20,13 @@ def summarize_affected(reports):
             summary["unknown_reports"] += 1
     return summary
 
+
+
 if __name__ == "__main__":
+    reports = [
+        {"id": 1, "affected_count": 4},
+        {"id": 2, "affected_count": None},
+        {"id": 3, "affected_count": 0},
+        {"id": 4, "affected_count": 12},
+    ]
     print(summarize_affected(reports))

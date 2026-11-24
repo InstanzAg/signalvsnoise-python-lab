@@ -1,0 +1,2 @@
+from func.func12_summarize_checked_reports import summarize_checked_reports
+
