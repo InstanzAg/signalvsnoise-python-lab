@@ -1,13 +1,18 @@
 from func.func14_save_reports import save_reports
 from func.func13_load_reports import load_reports
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
 
-reports = load_reports(path="sample_data/reports.json")
-# print(reports)
-reports[0]["affected_count"] = 3
-# print(reports)
-save_reports(reports=reports, path_out="sample_data/saved_reports.json")
+with TemporaryDirectory() as temp_dir:
+    input_path =  Path("sample_data") / "reports.json"
+    output_path = Path(temp_dir) / "saved_reports.json"
+    reports = load_reports(path=input_path)
+    # print(reports)
+    reports[0]["affected_count"] = 3
+    # print(reports)
+    save_reports(reports=reports, path_out=output_path)
 
-actual = load_reports(path="sample_data/saved_reports.json")
-# print(actual)
-assert actual == reports
+    actual = load_reports(path=output_path)
+    # print(actual)
+    assert actual == reports

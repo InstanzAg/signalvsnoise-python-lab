@@ -7,4 +7,5 @@ def save_reports(reports, path_out):
         json.dump(reports, file)
 
 if __name__ == "__main__":
-    save_reports("sample_data/reports.json", "sample_data/saved_reports.json")
+    reports = load_reports("sample_data/reports.json")
+    save_reports(reports, "sample_data/saved_reports.json")
