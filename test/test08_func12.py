@@ -20,7 +20,7 @@ assert actual == expected
 
 reports2 = [
     {"id": 1, "category": "accessibility", "status": "open", "affected_count": 4},
-    {"id": 1, "category": "infrastructure", "status": "open", "affected_count": None}
+    {"id": 2, "category": "infrastructure", "status": "open", "affected_count": None}
 ]
 
 try:
@@ -29,7 +29,7 @@ except ValueError as error:
     print(f"Check stopped: {error}")
     assert "Duplicate report Ids found: {1}" in str(error)
 else:
-    raise ValueError("Expected ValueError for a duplicate Id report")
+    raise AssertionError("Expected ValueError for a duplicate Id report")
 
 
 reports3 = [

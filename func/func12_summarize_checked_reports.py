@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     reports2 = [
     {"id": 1, "category": "accessibility", "status": "open", "affected_count": 4},
-    {"id": 1, "category": "infrastructure", "status": "open", "affected_count": None},
+    {"id": 2, "category": "infrastructure", "status": "open", "affected_count": None},
     ]
     
     print(summarize_checked_reports(reports2, "accessibility"))
