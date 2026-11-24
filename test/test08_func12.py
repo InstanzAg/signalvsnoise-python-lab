@@ -24,11 +24,12 @@ reports2 = [
 ]
 
 try:
-    error = summarize_checked_reports(reports2, "accessibility")
+    summarize_checked_reports(reports2, "accessibility")
 except ValueError as error:
     print(f"Check stopped: {error}")
+    assert "Duplicate report Ids found: {1}" in str(error)
 else:
-    print("The program continues.")
+    raise ValueError("Expected ValueError for a duplicate Id report")
 
 
 reports3 = [
@@ -39,10 +40,12 @@ reports3 = [
     {"id": 5, "category": "accessibility", "status": "open", "affected_count": 0},
 ]
 try:
-    error = summarize_checked_reports(reports3, "accessibility")
+    summarize_checked_reports(reports3, "accessibility")
 except ValueError as error:
     print(f"Check stopped: {error}")
+    assert "{2: 'negative'}" in str(error)
 else:
-    print("The program continues.")
+    raise AssertionError("Expected ValueError for a negative count outside the requested category")
+
 
 
